@@ -49,13 +49,19 @@ class Rectangle:
         return "Rectangle(width=" + str(self.width) + ", height=" + str(self.height) + ")"
 
 
-class Square():
+class Square(Rectangle):
     def __init__(self, side):
         self.width = side
         self.height = side
 
     def set_side(self, side):
         self.width = side
+        self.height = side
+
+    def set_width(self, side):
+        self.width = side
+
+    def set_height(self, side):
         self.height = side
 
     def get_area(self):
@@ -84,6 +90,9 @@ class Square():
         h = self.height // shape.height
 
         return w * h
+
+    def get_perimeter(self):
+        return (2 * self.width) + (2 * self.height)
 
     def __str__(self):
         return "Square(side=" + str(self.width) + ")"
